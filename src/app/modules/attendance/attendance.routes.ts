@@ -10,5 +10,5 @@ export const ATTENDANCE_ROUTES: Routes = [
   {
     path: 'markAttendance',
     component: MarkAttendance
-  },
+  }
 ];

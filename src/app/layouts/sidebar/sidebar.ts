@@ -8,10 +8,10 @@ import { MENU_ITEMS } from '../../core/config/menu.config';
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',
 })
-export class Sidebar implements OnInit{
+export class Sidebar implements OnInit {
   menus: MenuItem[] = [];
   ngOnInit(): void {
-     const currentRole = 'Admin';
+    const currentRole = 'Admin';
 
     this.menus = MENU_ITEMS.filter(
       menu => menu.roles.includes(currentRole)
