@@ -11,5 +11,11 @@ export const MENU_ITEMS: MenuItem[] = [
     icon: 'pi pi-calendar',
     route: '/attendance',
     roles: ['Admin', 'Teacher']
-}
+},
+{
+    label: 'My Attendance',
+    icon: '',
+    route: '/student/attendance',
+    roles: ['Student']
+  }
 ];
