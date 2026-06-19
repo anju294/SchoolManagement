@@ -1,7 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary px-3">
 
-  <span class="navbar-brand">
-    School Management
-  </span>
+<nav class="navbar navbar-expand-lg bg-white shadow-sm px-3">
+
+    <div class="d-flex align-items-center">
+
+        <button class="btn btn-outline-secondary me-3" (click)="toggleSidebar()">
+
+            <i class="pi pi-bars"></i>
+
+        </button>
+
+        <img src="assets/images/logo.png" height="40">
+
+        <span class="fw-bold ms-2">
+            School Management
+        </span>
+
+    </div>
+
+    <div class="ms-auto d-flex gap-3">
+
+        <button class="btn btn-link" (click)="toggleTheme()">
+
+            <i class="pi pi-moon"></i>
+
+        </button>
+
+        <button class="btn btn-danger" (click)="logout()">
+
+            Logout
+        </button>
+
+    </div>
 
 </nav>

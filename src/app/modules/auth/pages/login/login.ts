@@ -34,8 +34,14 @@ export class Login {
       'role',
       'Admin'
     );
-
+    localStorage.setItem('userName', 'Anjali');
     this.router.navigate(['/students']);
+
+    //  localStorage.setItem(
+    //   'role',
+    //   'Teacher'
+    // );
+    // this.router.navigate(['/teacher/dashboard']);
 
     // const payload = {
     //   userName: this.userName,

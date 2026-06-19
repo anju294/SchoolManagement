@@ -1,37 +1,85 @@
-<!-- <ul class="menu-list">
+<div
+  class="sidebar"
+  [class.collapsed]="collapsed">
 
-  @for(menu of menus; track menu.route){
+  <ul class="menu-list">
 
-    <li>
-      <a [routerLink]="menu.route">
+    @for(menu of items; track menu.label){
 
-        <i [class]="menu.icon"></i>
+      <li>
 
-        {{ menu.label }}
+        @if(menu.items?.length){
 
-      </a>
-    </li>
+          <div
+            class="menu-parent"
+            (click)="toggleMenu(menu)">
 
-  }
+            <div class="menu-left">
 
-</ul> -->
+              <i [class]="menu.icon"></i>
 
-<div class="sidebar p-3">
+              @if(!collapsed){
+                <span>{{menu.label}}</span>
+              }
 
-  <h5>Menu</h5>
+            </div>
 
-  <ul>
-    <li>
-      <a routerLink="/students">
-        Students
-      </a>
-    </li>
+            @if(!collapsed){
+              <i
+                class="pi"
+                [class.pi-chevron-down]="menu.expanded"
+                [class.pi-chevron-right]="!menu.expanded">
+              </i>
+            }
 
-    <li>
-      <a routerLink="/attendance">
-        Attendance
-      </a>
-    </li>
+          </div>
+
+          @if(menu.expanded && !collapsed){
+
+            <ul class="submenu">
+
+              @for(sub of menu.items; track sub.label){
+
+                <li>
+
+                  <a
+                    [routerLink]="sub.route"
+                    routerLinkActive="active">
+
+                    <i [class]="sub.icon"></i>
+
+                    {{sub.label}}
+
+                  </a>
+
+                </li>
+
+              }
+
+            </ul>
+
+          }
+
+        } @else {
+
+          <a
+            [routerLink]="menu.route"
+            routerLinkActive="active">
+
+            <i [class]="menu.icon"></i>
+
+            @if(!collapsed){
+              <span>{{menu.label}}</span>
+            }
+
+          </a>
+
+        }
+
+      </li>
+
+    }
+
   </ul>
 
 </div>

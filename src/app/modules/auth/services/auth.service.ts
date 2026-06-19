@@ -36,9 +36,11 @@ export class AuthService {
     }
 
     logout(): void {
-        localStorage.clear();
-    }
 
+        localStorage.removeItem('token');
+        localStorage.removeItem('role');
+        localStorage.removeItem('userName');
+    }
     getUserId(): number {
         return Number(
             localStorage.getItem('userId')
@@ -55,5 +57,9 @@ export class AuthService {
         // Check JWT expiration
 
         return true;
+    }
+
+    getUserName(): string {
+        return localStorage.getItem('userName') ?? '';
     }
 }

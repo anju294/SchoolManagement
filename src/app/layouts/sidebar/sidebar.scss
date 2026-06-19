@@ -7,3 +7,219 @@
 .menu-list li {
   padding: 12px;
 }
+
+.sidebar {
+
+  width: 260px;
+  min-width: 260px;
+
+  background: #0284c7;
+
+  color: white;
+
+  height: 100vh;
+
+  transition: .3s ease;
+
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+
+  width: 70px;
+  min-width: 70px;
+}
+
+.menu-list {
+
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+}
+
+.menu-list li {
+
+  width: 100%;
+}
+
+.menu-parent,
+.menu-list a {
+
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 15px;
+
+  color: white;
+
+  cursor: pointer;
+
+  text-decoration: none;
+}
+
+.menu-left {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.submenu {
+
+  padding-left: 40px;
+
+  list-style: none;
+}
+
+.submenu a {
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+// .active {
+
+//   background: #0369a1;
+// }
+
+:host {
+  display: block;
+  width: 260px;
+  min-width: 260px;
+  height: 100%;
+  border-right: 1px solid #dee2e6;
+}
+
+.sidebar {
+  width: 260px;
+  transition: all .3s ease;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar-container {
+  width: 260px;
+  min-width: 260px;
+  height: 100%;
+//   background-color: #0ea5e9; /* Sky Blue */
+  background-color: #0284c7;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.sidebar-container.collapsed {
+  width: 70px;
+  min-width: 70px;
+}
+
+.sidebar-container {
+  .p-panelmenu {
+    background: transparent;
+    border: none;
+  }
+
+  .p-panelmenu-header-link {
+    color: white;
+  }
+
+  .p-menuitem-link {
+    color: white;
+  }
+}
+
+
+.sidebar {
+
+  width: 260px;
+  min-width: 260px;
+
+  height: 100vh;
+
+  background: #0ea5e9;
+
+  color: white;
+
+  transition: all .3s ease;
+
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+
+  width: 70px;
+  min-width: 70px;
+}
+
+.sidebar-header {
+
+  height: 60px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 20px;
+
+  font-size: 20px;
+
+  font-weight: 600;
+}
+
+.menu-list {
+
+  list-style: none;
+
+  padding: 0;
+}
+
+.menu-list li {
+
+  margin: 5px 0;
+}
+
+.menu-list a {
+
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 0 20px;
+
+  color: white;
+
+  text-decoration: none;
+}
+
+.menu-list a:hover {
+
+  background: rgba(255,255,255,.15);
+}
+
+// .menu-list a.active {
+
+//   background: #0369a1;
+
+//   border-left: 4px solid white;
+// }
