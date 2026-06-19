@@ -1,1 +1,37 @@
-<p>sidebar works!</p>
+<!-- <ul class="menu-list">
+
+  @for(menu of menus; track menu.route){
+
+    <li>
+      <a [routerLink]="menu.route">
+
+        <i [class]="menu.icon"></i>
+
+        {{ menu.label }}
+
+      </a>
+    </li>
+
+  }
+
+</ul> -->
+
+<div class="sidebar p-3">
+
+  <h5>Menu</h5>
+
+  <ul>
+    <li>
+      <a routerLink="/students">
+        Students
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/attendance">
+        Attendance
+      </a>
+    </li>
+  </ul>
+
+</div>
