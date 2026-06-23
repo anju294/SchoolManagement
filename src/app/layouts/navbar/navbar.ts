@@ -12,7 +12,7 @@ import { LayoutService } from '../../core/services/layout.service';
 })
 export class Navbar implements OnInit {
   userName = '';
-  role: any = '';
+  role: string | null = '';
   constructor(private router: Router, private authService: AuthService, private layoutService: LayoutService) { }
   ngOnInit(): void {
     this.userName = this.authService.getUserName();

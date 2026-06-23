@@ -1,82 +1,71 @@
-<div
-  class="sidebar"
-  [class.collapsed]="collapsed">
+<div class="sidebar" [class.collapsed]="collapsed">
 
   <ul class="menu-list">
 
     @for(menu of items; track menu.label){
 
-      <li>
+    <li>
 
-        @if(menu.items?.length){
+      @if(menu.items?.length){
 
-          <div
-            class="menu-parent"
-            (click)="toggleMenu(menu)">
+      <div class="menu-parent" tabindex="0" (click)="toggleMenu(menu)" (keydown.enter)="toggleMenu(menu)">
 
-            <div class="menu-left">
+        <div class="menu-left">
 
-              <i [class]="menu.icon"></i>
+          <i [class]="menu.icon"></i>
 
-              @if(!collapsed){
-                <span>{{menu.label}}</span>
-              }
-
-            </div>
-
-            @if(!collapsed){
-              <i
-                class="pi"
-                [class.pi-chevron-down]="menu.expanded"
-                [class.pi-chevron-right]="!menu.expanded">
-              </i>
-            }
-
-          </div>
-
-          @if(menu.expanded && !collapsed){
-
-            <ul class="submenu">
-
-              @for(sub of menu.items; track sub.label){
-
-                <li>
-
-                  <a
-                    [routerLink]="sub.route"
-                    routerLinkActive="active">
-
-                    <i [class]="sub.icon"></i>
-
-                    {{sub.label}}
-
-                  </a>
-
-                </li>
-
-              }
-
-            </ul>
-
+          @if(!collapsed){
+          <span>{{menu.label}}</span>
           }
 
-        } @else {
+        </div>
 
-          <a
-            [routerLink]="menu.route"
-            routerLinkActive="active">
+        @if(!collapsed){
+        <i class="pi" [class.pi-chevron-down]="menu.expanded" [class.pi-chevron-right]="!menu.expanded">
+        </i>
+        }
 
-            <i [class]="menu.icon"></i>
+      </div>
 
-            @if(!collapsed){
-              <span>{{menu.label}}</span>
-            }
+      @if(menu.expanded && !collapsed){
+
+      <ul class="submenu">
+
+        @for(sub of menu.items; track sub.label){
+
+        <li>
+
+          <a [routerLink]="sub.route" routerLinkActive="active">
+
+            <i [class]="sub.icon"></i>
+
+            {{sub.label}}
 
           </a>
 
+        </li>
+
         }
 
-      </li>
+      </ul>
+
+      }
+
+      } @else {
+
+      <a [routerLink]="menu.route" routerLinkActive="active">
+
+        <i [class]="menu.icon"></i>
+
+        @if(!collapsed){
+        <span>{{menu.label}}</span>
+        }
+
+      </a>
+
+      }
+
+    </li>
 
     }
 

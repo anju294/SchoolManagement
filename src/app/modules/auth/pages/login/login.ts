@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -16,9 +16,10 @@ import { Router } from '@angular/router';
 export class Login {
   constructor(
     private authService: AuthService,
-    private router: Router
+    // private router: Router
   ) { }
 
+  private router = inject(Router);
   userName = '';
   password = '';
 

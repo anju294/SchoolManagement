@@ -14,7 +14,7 @@ export class MenuService {
 //       .map(menu => this.mapMenu(menu));
 //   }
 
-  private mapMenu(menu: any): any {
+  private mapMenu(menu: MenuItem): any {
 
     return {
       label: menu.label,
