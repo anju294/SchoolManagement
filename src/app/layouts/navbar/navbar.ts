@@ -48,19 +48,4 @@ export class Navbar implements OnInit {
 
     this.layoutService.toggleSidebar();
   }
-
-  // toggleTheme() {
-
-  //   const body = document.body;
-
-  //   body.classList.toggle('dark-theme');
-
-  //   const isDark =
-  //     body.classList.contains('dark-theme');
-
-  //   localStorage.setItem(
-  //     'theme',
-  //     isDark ? 'dark' : 'light'
-  //   );
-  // }
 }

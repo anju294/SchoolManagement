@@ -1,17 +1,19 @@
-<div class="app-container">
-
-  <app-navbar></app-navbar>
-
-  <div class="content-wrapper">
+<div class="layout-container" [class.sidebar-collapsed]="collapsed">
 
     <app-sidebar></app-sidebar>
 
-    <main class="main-content">
-      <router-outlet></router-outlet>
-    </main>
+    <div class="content-wrapper">
 
-  </div>
+        <app-navbar></app-navbar>
 
-  <app-footer></app-footer>
+        <div class="page-content">
+
+            <router-outlet></router-outlet>
+
+        </div>
+
+        <app-footer></app-footer>
+
+    </div>
 
 </div>
