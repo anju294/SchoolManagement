@@ -1,0 +1,93 @@
+:host {
+    display: block;
+    height: 100%;
+}
+
+.sidebar {
+
+    width: 260px;
+
+    height: 100vh;
+
+    // border: 5px solid red;
+
+    background: #0284c7;
+
+    color: white;
+
+    transition: width .3s ease;
+
+    overflow: hidden;
+}
+
+.sidebar.collapsed {
+
+    width: 70px;
+}
+
+.menu-list {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+.menu-list li {
+
+    width: 100%;
+}
+
+.menu-parent,
+.menu-list a {
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 15px;
+
+    color: white;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.menu-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.submenu {
+
+    list-style: none;
+
+    padding-left: 35px;
+}
+
+.submenu a {
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.menu-list a:hover,
+.menu-parent:hover {
+
+    background: rgba(255, 255, 255, .15);
+}
