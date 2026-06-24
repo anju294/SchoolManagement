@@ -1,44 +1,69 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+# Dependencies
 
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
-
-# Node
 /node_modules
-npm-debug.log
-yarn-error.log
 
-# IDEs and editors
-.idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# Angular build output
 
-# Visual Studio Code
+/dist
+/out-tsc
+
+# Angular cache
+
+/.angular/cache
+
+# Logs
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDEs
+
 .vscode/*
-!.vscode/settings.json
+!.vscode/extensions.json
 !.vscode/tasks.json
 !.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/mcp.json
-.history/*
+.idea
 
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
-__screenshots__/
+# OS files
 
-# System files
 .DS_Store
 Thumbs.db
+
+# Coverage reports
+
+/coverage
+
+# Temporary files
+
+.tmp
+.temp
+
+# Environment files (if they contain secrets)
+
+src/environments/environment.local.ts
+src/environments/environment.prod.local.ts
+
+# Compiled files
+
+*.tsbuildinfo
+
+# Package manager
+
+.pnpm-store
+.npm
+
+# Angular generated files
+
+.angular
+
+# Firebase (if used)
+
+.firebase
+
+# Misc
+
+.cache
+.sass-cache
+.eslintcache
