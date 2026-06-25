@@ -4,13 +4,13 @@ export const MENU_ITEMS: MenuItem[] = [
     label: 'Students',
     icon: 'pi pi-users',
     route: '/students',
-    roles: ['Admin']
+    roles: ['Admin', 'SuperAdmin']
 },
 {
     label: 'Attendance',
     icon: 'pi pi-calendar',
     route: '/attendance',
-    roles: ['Admin', 'Teacher']
+    roles: ['Admin', 'SuperAdmin', 'Teacher']
 },
 {
     label: 'My Attendance',

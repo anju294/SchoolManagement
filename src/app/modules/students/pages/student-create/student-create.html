@@ -1,1 +1,173 @@
-<p>student-create works!</p>
+<form [formGroup]="studentForm">
+
+    <p-tabs [value]="activeTab">
+
+        <p-tablist>
+
+            <p-tab value="0">Basic Information</p-tab>
+            <p-tab value="1">Academic Information</p-tab>
+            <p-tab value="2">Medical Information</p-tab>
+            <p-tab value="3">Parent Information</p-tab>
+            <p-tab value="4">Address Information</p-tab>
+
+        </p-tablist>
+
+        <p-tabpanels>
+
+            <!-- BASIC -->
+            <p-tabpanel value="0">
+
+                <!-- Your Basic Info HTML -->
+                <div formGroupName="basicInfo">
+                    <div class="row g-3">
+                        <div class="col-md-3"> <label>Admission Number</label> <input pInputText class="w-100"
+                                formControlName="admissionNumber"> </div>
+                        <div class="col-md-3"> <label>Roll Number</label> <input pInputText class="w-100"
+                                formControlName="rollNumber"> </div>
+                        <div class="col-md-3"> <label>First Name</label> <input pInputText class="w-100"
+                                formControlName="firstName"> </div>
+                        <div class="col-md-3"> <label>Middle Name</label> <input pInputText class="w-100"
+                                formControlName="middleName"> </div>
+                        <div class="col-md-3"> <label>Last Name</label> <input pInputText class="w-100"
+                                formControlName="lastName"> </div>
+                        <div class="col-md-3"> <label>Date Of Birth</label> <input type="date" class="form-control"
+                                formControlName="dateOfBirth"> </div>
+                        <div class="col-md-3"> <label>Gender</label> <select class="form-select"
+                                formControlName="gender">
+                                <option value="">Select</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select> </div>
+                        <div class="col-md-3"> <label>Mobile</label> <input pInputText class="w-100"
+                                formControlName="mobile"> </div>
+                        <div class="col-md-4"> <label>Email</label> <input pInputText class="w-100"
+                                formControlName="email"> </div>
+                        <div class="col-md-4"> <label>Aadhaar Number</label> <input pInputText class="w-100"
+                                formControlName="aadhaarNumber"> </div>
+                        <div class="col-md-4"> <label>Samagra ID</label> <input pInputText class="w-100"
+                                formControlName="samagraId"> </div>
+                        <div class="col-md-6"> <label>Apaar ID</label> <input pInputText class="w-100"
+                                formControlName="apaarId"> </div>
+                        <div class="col-md-6"> <label>PEN Number</label> <input pInputText class="w-100"
+                                formControlName="penNumber"> </div>
+                    </div>
+                </div>
+                <div class="text-end mt-4"> <p-button label="Save & Next" (onClick)="nextTab()"></p-button> </div>
+
+            </p-tabpanel>
+
+            <!-- ACADEMIC -->
+            <p-tabpanel value="1">
+
+                <!-- Your Academic HTML -->
+                <div formGroupName="academicInfo">
+                    <div class="row g-3">
+                        <div class="col-md-3"> <label>Academic Year</label> <input pInputText class="w-100"
+                                formControlName="academicYearId"> </div>
+                        <div class="col-md-3"> <label>Class</label> <input pInputText class="w-100"
+                                formControlName="classId"> </div>
+                        <div class="col-md-3"> <label>Section</label> <input pInputText class="w-100"
+                                formControlName="sectionId"> </div>
+                        <div class="col-md-3"> <label>Admission Date</label> <input type="date" class="form-control"
+                                formControlName="admissionDate"> </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-4"> <p-button label="Previous" severity="secondary"
+                        (onClick)="previousTab()"></p-button> <p-button label="Save & Next"
+                        (onClick)="nextTab()"></p-button> </div>
+
+            </p-tabpanel>
+
+            <!-- MEDICAL -->
+            <p-tabpanel value="2">
+
+                <!-- Your Medical HTML -->
+                <div formGroupName="medicalInfo">
+                    <div class="row g-3">
+                        <div class="col-md-4"> <p-checkbox binary="true" formControlName="hasDisability"></p-checkbox>
+                            Has Disability </div>
+                        <div class="col-md-8"> <input pInputText class="w-100" placeholder="Disability Type"
+                                formControlName="disabilityType"> </div>
+                        <div class="col-md-4"> <p-checkbox binary="true" formControlName="hasMedicalCondition">
+                            </p-checkbox> Has Medical Condition </div>
+                        <div class="col-md-12"> <textarea pTextarea rows="4" class="w-100"
+                                formControlName="medicalRemarks"> </textarea> </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-4"> <p-button label="Previous" severity="secondary"
+                        (onClick)="previousTab()"></p-button> <p-button label="Save & Next"
+                        (onClick)="nextTab()"></p-button> </div>
+
+            </p-tabpanel>
+
+            <!-- PARENT -->
+            <p-tabpanel value="3">
+
+                <!-- Your Parent HTML -->
+                <div formGroupName="parentInfo">
+                    <div class="row g-3">
+                        <div class="col-md-4"> <label>Father Name</label> <input pInputText class="w-100"
+                                formControlName="fatherName"> </div>
+                        <div class="col-md-4"> <label>Mother Name</label> <input pInputText class="w-100"
+                                formControlName="motherName"> </div>
+                        <div class="col-md-4"> <label>Guardian Name</label> <input pInputText class="w-100"
+                                formControlName="guardianName"> </div>
+                        <div class="col-md-4"> <label>Relation</label> <input pInputText class="w-100"
+                                formControlName="relation"> </div>
+                        <div class="col-md-4"> <label>Father Mobile</label> <input pInputText class="w-100"
+                                formControlName="fatherMobile"> </div>
+                        <div class="col-md-4"> <label>Mother Mobile</label> <input pInputText class="w-100"
+                                formControlName="motherMobile"> </div>
+                        <div class="col-md-4"> <label>Guardian Mobile</label> <input pInputText class="w-100"
+                                formControlName="guardianMobile"> </div>
+                        <div class="col-md-4"> <label>Father Email</label> <input pInputText class="w-100"
+                                formControlName="fatherEmail"> </div>
+                        <div class="col-md-4"> <label>Mother Email</label> <input pInputText class="w-100"
+                                formControlName="motherEmail"> </div>
+                        <div class="col-md-4"> <label>Father Occupation</label> <input pInputText class="w-100"
+                                formControlName="fatherOccupation"> </div>
+                        <div class="col-md-4"> <label>Mother Occupation</label> <input pInputText class="w-100"
+                                formControlName="motherOccupation"> </div>
+                        <div class="col-md-4"> <label>Annual Income</label> <input type="number" class="form-control"
+                                formControlName="annualIncome"> </div>
+                        <div class="col-md-4"> <label>Father Aadhaar</label> <input pInputText class="w-100"
+                                formControlName="fatherAadhaarNumber"> </div>
+                        <div class="col-md-4"> <label>Mother Aadhaar</label> <input pInputText class="w-100"
+                                formControlName="motherAadhaarNumber"> </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-4"> <p-button label="Previous" severity="secondary"
+                        (onClick)="previousTab()"></p-button> <p-button label="Save & Next"
+                        (onClick)="nextTab()"></p-button> </div>
+
+            </p-tabpanel>
+
+            <!-- ADDRESS -->
+            <p-tabpanel value="4">
+
+                <!-- Your Address HTML -->
+                <div formGroupName="addressInfo">
+                    <div class="row g-3">
+                        <div class="col-md-12"> <label>Permanent Address</label> <textarea pTextarea rows="3"
+                                class="w-100" formControlName="permanentAddress"> </textarea> </div>
+                        <div class="col-md-12"> <label>Current Address</label> <textarea pTextarea rows="3"
+                                class="w-100" formControlName="currentAddress"> </textarea> </div>
+                        <div class="col-md-4"> <label>City</label> <input pInputText class="w-100"
+                                formControlName="city"> </div>
+                        <div class="col-md-4"> <label>State</label> <input pInputText class="w-100"
+                                formControlName="state"> </div>
+                        <div class="col-md-4"> <label>Pincode</label> <input pInputText class="w-100"
+                                formControlName="pincode"> </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-4"> <p-button label="Previous" severity="secondary"
+                        (onClick)="previousTab()"> </p-button> <p-button label="Submit" severity="success"
+                        (onClick)="submit()"> </p-button> </div>
+
+            </p-tabpanel>
+
+        </p-tabpanels>
+
+    </p-tabs>
+
+</form>

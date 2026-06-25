@@ -14,13 +14,6 @@ export const routes: Routes = [
             import('./modules/auth/auth.routes')
                 .then(m => m.AUTH_ROUTES)
     },
-
-    // {
-    //     path: 'students',
-    //     loadChildren: () =>
-    //         import('./modules/students/students.routes')
-    //             .then(m => m.STUDENT_ROUTES)
-    // },
     {
         path: '',
         component: MainLayout,

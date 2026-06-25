@@ -11,7 +11,7 @@ export const STUDENT_ROUTES: Routes = [
     component: StudentList,
     canActivate: [authGuard, roleGuard],
     data: {
-      roles: ['Admin']
+      roles: ['Admin', 'SuperAdmin']
     }
   },
   {

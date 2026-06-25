@@ -1,61 +1,59 @@
-<!-- <div class="container vh-100 d-flex align-items-center justify-content-center">
+<div class="login-container">
 
-  <div class="card login-card shadow">
+  <div class="login-card">
 
-    <div class="card-body">
+    <div class="text-center mb-4">
 
-      <h3 class="text-center mb-4">
-        Student Login
-      </h3>
+      <img src="assets/images/logo.png" alt="School Logo" class="logo" width="40" height="40">
 
-      <form>
+      <h2>School ERP</h2>
 
-        <div class="mb-3">
-          <label class="form-label">
-            Username
-          </label>
-
-          <input
-            pInputText
-            class="w-100"
-            type="text">
-        </div>
-
-        <div class="mb-4">
-          <label class="form-label">
-            Password
-          </label>
-
-          <input
-            pInputText
-            class="w-100"
-            type="password">
-        </div>
-
-        <p-button
-          label="Login"
-          styleClass="w-100">
-        </p-button>
-
-      </form>
+      <p class="text-muted">
+        Sign in to continue
+      </p>
 
     </div>
 
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+      <div class="mb-3">
+
+        <label class="form-label">
+          Tenant Code
+        </label>
+
+        <input type="text" class="form-control" formControlName="tenantCode">
+
+      </div>
+
+      <div class="mb-3">
+
+        <label class="form-label">
+          Username
+        </label>
+
+        <input type="text" class="form-control" formControlName="userName">
+
+      </div>
+
+      <div class="mb-4">
+
+        <label class="form-label">
+          Password
+        </label>
+
+        <input type="password" class="form-control" formControlName="password">
+
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">
+
+        Login
+
+      </button>
+
+    </form>
+
   </div>
-
-</div> -->
-
-
-
-<div class="container mt-5">
-
-  <h2>Login Page</h2>
-
-  <button
-    class="btn btn-primary"
-    (click)="login()">
-
-    Login
-  </button>
 
 </div>

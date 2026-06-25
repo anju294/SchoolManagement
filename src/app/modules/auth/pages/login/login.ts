@@ -1,75 +1,101 @@
-import { Component, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/inputtext';
+import { Component } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators
+} from '@angular/forms';
+
+import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule,
-    ButtonModule,
-    InputTextModule],
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule
+  ],
   templateUrl: './login.html',
-  styleUrl: './login.scss',
+  styleUrl: './login.scss'
 })
 export class Login {
-  constructor(
-    private authService: AuthService,
-    // private router: Router
-  ) { }
 
-  private router = inject(Router);
-  userName = '';
-  password = '';
+  loginForm: FormGroup;
+
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
+
+    this.loginForm =
+      this.fb.group({
+
+        tenantCode: [
+          'DEFAULT',
+          Validators.required
+        ],
+
+        userName: [
+          '',
+          Validators.required
+        ],
+
+        password: [
+          '',
+          Validators.required
+        ]
+      });
+  }
 
   login() {
 
+     localStorage.setItem(
+    'accessToken',
+    'dummy-token'
+  );
 
-    localStorage.setItem(
-      'token',
-      'dummy-token'
-    );
+  localStorage.setItem(
+    'roles',
+    JSON.stringify(['SuperAdmin'])
+  );
 
-    localStorage.setItem(
-      'role',
-      'Admin'
-    );
-    localStorage.setItem('userName', 'Anjali');
-    this.router.navigate(['/students']);
+  this.router.navigate([
+    '/students'
+  ]);
+    // if (this.loginForm.invalid) {
 
-    //  localStorage.setItem(
-    //   'role',
-    //   'Teacher'
-    // );
-    // this.router.navigate(['/teacher/dashboard']);
+    //   this.loginForm.markAllAsTouched();
 
-    // const payload = {
-    //   userName: this.userName,
-    //   password: this.password
-    // };
+    //   return;
+    // }
+    //  this.router.navigate(
+    //         ['/students']
+    //       );
 
-    // console.log(payload);
-    // this.authService.login(payload)
-    //   .subscribe(response => {
+    // this.authService
+    //   .login(this.loginForm.value)
+    //   .subscribe({
 
-    //     this.authService.saveUser(response);
+    //     next: response => {
 
-    //     switch (response.role) {
+    //       this.authService
+    //         .saveUser(response);
 
-    //       case 'Admin':
-    //         this.router.navigate(['/admin/dashboard']);
-    //         break;
+    //       this.router.navigate(
+    //         ['/students']
+    //       );
+    //     },
 
-    //       case 'Teacher':
-    //         this.router.navigate(['/teacher/dashboard']);
-    //         break;
+    //     error: error => {
 
-    //       case 'Student':
-    //         this.router.navigate(['/student/dashboard']);
-    //         break;
+    //       console.error(error);
     //     }
-
     //   });
+    console.log(
+      this.loginForm.value
+    );
   }
 }

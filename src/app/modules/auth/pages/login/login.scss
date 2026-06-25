@@ -1,8 +1,33 @@
-.login-card {
-  width: 400px;
-  border-radius: 12px;
+.login-container {
+
+  height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background-color: #f5f7fb;
 }
 
-.card-body {
+.login-card {
+
+  width: 400px;
+
+  background: white;
+
   padding: 2rem;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 15px rgba(0,0,0,.1);
+}
+
+.logo {
+
+  width: 80px;
+
+  margin-bottom: 1rem;
 }
